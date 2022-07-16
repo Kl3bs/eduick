@@ -11,6 +11,7 @@
 
 .collapse {
   margin-left: 79px;
+  display: none;
 }
 
 .navItem {
@@ -39,4 +40,15 @@
   letter-spacing: -0.02em;
 
   color: #6f48ec;
+}
+
+.show {
+  height: 100vh;
+  transition: height 1.8s;
+}
+
+@media (max-width: 990px) {
+  .yellowButton {
+    display: none;
+  }
 }
