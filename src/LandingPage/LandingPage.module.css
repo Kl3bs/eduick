@@ -1,52 +1,148 @@
-.containerFluid {
-  background: linear-gradient(180deg, #7a57fd 0%, #6135d7 100%);
-  width: 100%;
-  height: 80vh;
-}
-
-/* .col {
-  height: 100%;
-  flex: 1 0;
-} */
-
-.bottom {
-  background: #200e64;
-  height: 10vh;
-}
-
-.mainImage {
-  max-width: 60%;
-}
-
-/**************/
-
 ::placeholder {
   color: #ffffff;
+  font-family: "Open Sans";
+  padding-left: 10px;
   opacity: 1;
+}
+
+.checkLabel {
+  margin-left: 10px;
+  opacity: 0.4;
+  cursor: pointer;
+  z-index: -1;
+}
+
+input[type="radio"] {
+  margin-left: 10px !important;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+input[type="radio"]:checked {
+  appearance: none;
+  outline: none;
+  padding: 0;
+  content: none;
+  border: none;
+  background-color: #ffd74f;
+}
+
+input[type="radio"]:checked::before {
+  position: absolute;
+  color: #b68300;
+  content: "\00A0\2713\00A0";
+  border: none;
+  font-weight: bolder;
+  font-size: 13px;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+input[type="radio"]:checked + label {
+  opacity: 1;
+}
+
+.description {
+  width: 496px;
+  margin-top: 30px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: start;
 }
 
 .searchInput {
   box-sizing: border-box;
-
-  width: 272px;
+  width: 100%;
   height: 48px;
-
   background: rgba(255, 255, 255, 0.24);
   opacity: 1;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 4px;
-  margin-top: 60px;
+  margin-top: 40px;
   color: #ffffff;
 }
 
 .title {
   font-family: "Poppins";
   font-style: normal;
-  font-size: 28px;
+  font-size: 32px;
+  line-height: 37.92px;
   color: #fff;
 }
 
 .title span {
   font-weight: bold;
   color: #ffeaa4;
+}
+
+.formCheck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.check {
+  height: 48px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 80%;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mainImage {
+  max-width: 98.6%;
+}
+
+@media (max-width: 1200px) {
+  .bgWrapper {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .bgWrapper {
+    position: absolute;
+    z-index: -1;
+
+    right: 0;
+    width: 20%;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  [class*="col-6"] {
+    width: 100%;
+  }
+
+  [class*="col-3"] {
+    width: 47.33%;
+  }
+
+  [class*="col-3"]:nth-child(3) {
+    width: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .description {
+    display: none;
+  }
 }

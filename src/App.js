@@ -7,11 +7,6 @@ function App() {
     <div>
       <Header />
       <LandingPage />
-      {/* <h1>Salve</h1>
-
-      <p className="paragraph"> {paragraph.length > 10 ? "Maior" : "Menor"}</p>
-
-      <img src={img} alt="placeholder"></img> */}
     </div>
   );
 }

@@ -1,54 +1,218 @@
-.headerWrapper {
+.menu {
+  background: #7a57fd;
+  color: #fff;
+  height: 80px;
+  padding-left: 18px;
+  border-radius: 0px;
+}
+.menu ul,
+.menu li {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.menu ul {
   width: 100%;
+  align-items: center;
+  display: flex;
+}
+.menu li {
+  float: left;
+  display: inline;
+  position: relative;
+}
+.menu a {
+  display: block;
+  line-height: 45px;
+  padding: 0 14px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+.menu a.dropdown-arrow:after {
+  content: "\15BE";
+  margin-left: 5px;
+}
+
+.menu input {
+  display: none;
+  margin: 0;
+  padding: 0;
+  height: 45px;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.menu label {
+  display: none;
+  line-height: 45px;
+  text-align: center;
+  position: absolute;
+  left: 35px;
+}
+.menu label:before {
+  font-size: 1.6em;
+  content: "\2261";
+  margin-left: 20px;
+}
+.menu ul.sub-menus {
   height: auto;
-  background-color: #7a57fd;
-}
-
-.textWhite {
-  font-size: 19px;
-  color: white;
-}
-
-.collapse {
-  margin-left: 79px;
+  overflow: hidden;
+  width: 170px;
+  background: #444444;
+  position: absolute;
+  z-index: 99;
   display: none;
 }
-
-.navItem {
-  margin-left: 37px;
+.menu ul.sub-menus li {
+  display: block;
+  width: 100%;
+}
+.menu ul.sub-menus a {
+  color: #ffffff;
+  font-size: 16px;
+}
+.menu li:hover ul.sub-menus {
+  display: block;
+}
+.menu ul.sub-menus a:hover {
+  background: #f2f2f2;
+  color: #444444;
 }
 
-.navbarHeight {
-  height: 100px;
-}
-
-.yellowButton {
-  width: 165px;
-  height: 48px;
-
-  background: #ffd74f;
-  box-shadow: 1px 3px 11px -3px rgba(255, 231, 150, 0.45);
-  border-radius: 4px;
-  border: none;
-
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 19px;
-
-  letter-spacing: -0.02em;
-
-  color: #6f48ec;
-}
-
-.show {
-  height: 100vh;
-  transition: height 1.8s;
-}
-
-@media (max-width: 990px) {
-  .yellowButton {
-    display: none;
+@media screen and (min-width: 801px) {
+  .menu {
+    display: flex;
   }
+
+  .menu ul li:nth-child(3) {
+    width: 220px;
+    margin-left: 35%;
+  }
+
+  .menu img {
+    max-width: 10%;
+  }
+
+  .navbarWrapper {
+    padding-left: 200px;
+    margin: 0 auto;
+
+    max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    left: 0;
+    border-radius: 0px;
+  }
+
+  .menu a {
+    font-size: 21px;
+  }
+  .menu ul {
+    background: #200e64;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    display: none;
+    text-align: center;
+    padding-top: 20vh;
+  }
+  .menu ul.sub-menus {
+    width: 100%;
+    position: static;
+  }
+  .menu ul.sub-menus a {
+    padding-left: 30px;
+    font-size: 32px;
+  }
+  .menu li {
+    display: block;
+    float: none;
+    width: auto;
+  }
+
+  .menu li:nth-child(3) {
+    margin-top: 59px;
+    width: 80%;
+  }
+  .menu input,
+  .menu label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    display: block;
+    font-size: 30px;
+  }
+
+  .menu img {
+    position: absolute;
+    top: 30px;
+
+    left: 85px;
+  }
+  .menu input {
+    z-index: 1;
+  }
+  .menu input:checked + label {
+    color: white;
+  }
+
+  .menu input:checked + label:before {
+    content: "\00d7";
+  }
+
+  .menu input:checked ~ ul {
+    display: block;
+  }
+}
+
+.Modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  /* top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px; */
+  background-color: #6a40e4;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+}
+
+.modalRow {
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.modalTitle {
+  font-size: 32px;
+  color: white;
+  font-family: "Poppins";
+  line-height: 38px;
+}
+
+.modalTitle span {
+  font-weight: bold;
+  color: #ffeaa4;
+}
+
+.modalClose::before {
+  cursor: pointer;
+  color: #fff;
+  font-size: 34px;
+  content: "\00d7";
 }
