@@ -9,6 +9,7 @@ function LandingPage() {
         {/*margin top de 20px */}
         <div className="col-6">
           <img
+            alt="img"
             className={styles.mainImage}
             src={`${assetsPath}images/mainImage.svg`}
           />
