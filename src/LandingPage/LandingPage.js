@@ -1,8 +1,8 @@
 import styles from "./LandingPage.module.css";
 
-function LandingPage() {
-  const assetsPath = process.env.PUBLIC_URL + "/assets/";
+const assetsPath = process.env.PUBLIC_URL + "/assets/";
 
+const LandingPage = () => {
   return (
     <div className="container">
       <div className={`row ${styles.row}`}>
@@ -61,6 +61,6 @@ function LandingPage() {
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

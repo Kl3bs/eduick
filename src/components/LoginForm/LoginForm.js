@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Icon } from "react-icons-kit";
+import { Link } from "react-router-dom";
 
 import { eye } from "react-icons-kit/feather/eye";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
@@ -7,7 +8,7 @@ import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import styles from "./LoginForm.module.css";
 
 function LoginForm() {
-  const [type, setType] = useState("password");
+  const [type, setType] = useState("text");
   const [icon, setIcon] = useState(eye);
 
   const handleToggle = () => {
@@ -41,7 +42,10 @@ function LoginForm() {
         </div>
       </div>
 
-      <button className={`${styles.formButton} yellowButton`}>LOGIN</button>
+      <Link to="/dashboard">
+        {" "}
+        <button className={`${styles.formButton} yellowButton`}>LOGIN</button>
+      </Link>
     </div>
   );
 }
