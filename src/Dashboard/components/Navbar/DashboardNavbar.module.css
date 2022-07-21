@@ -1,0 +1,145 @@
+.containerWrapper {
+  background-color: #7a57fd;
+  width: 100%;
+}
+
+header {
+  position: relative;
+  max-width: 1200px;
+  background: #7a57fd;
+}
+.logo {
+  float: left;
+  text-align: center;
+  line-height: 60px;
+  font-size: 36px;
+  padding: 0 20px;
+  color: #069370;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.teacherMode {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.avatarWrapper {
+  margin: 10px;
+  float: right;
+}
+
+.dotStatus {
+  width: 10px;
+  height: 10px;
+  background: #ffd74f;
+  border-radius: 10px;
+  position: absolute;
+  right: 30px;
+  top: 27px;
+}
+
+.avatar {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media.istockphoto.com/photos/portrait-of-a-frightened-cat-closeup-breed-scottish-fold-picture-id614606664?k=20&m=614606664&s=612x612&w=0&h=KAn_QmEHFHxk8IvqySBkr6FfTYxVFVwq4kkwSnRJTTU=");
+}
+
+@media (max-width: 768px) {
+  .buttonsWrapper {
+    height: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  .meanToggle {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    color: #069370;
+  }
+
+  nav {
+    display: none;
+  }
+  nav.active {
+    display: block;
+    width: 100%;
+  }
+  nav.active ul {
+    display: none;
+  }
+  nav.active ul li {
+    margin: 0;
+    text-align: center;
+  }
+
+  .teacherMode {
+    height: 65px;
+    background: #ffffff;
+    box-shadow: 0px 32px 60px rgba(84, 95, 122, 0.08);
+  }
+
+  .teacherMode p {
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #7a57fd;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .meanToggle {
+    display: none;
+  }
+
+  .teacherMode {
+    font-weight: bold;
+    height: 50px;
+    max-width: 260px;
+    background-color: rgba(32, 14, 100, 0.3);
+    color: #fff;
+    float: right;
+    padding-inline: 10px;
+    margin-right: 20px;
+  }
+
+  .teacherMode span {
+    display: none;
+  }
+}
