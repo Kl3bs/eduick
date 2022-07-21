@@ -1,6 +1,9 @@
 body {
+  min-height: 100vh;
+}
+
+body {
   margin: 0;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(180deg, #7a57fd 80%, #200e64 20%);
   font-family: "Open Sans";

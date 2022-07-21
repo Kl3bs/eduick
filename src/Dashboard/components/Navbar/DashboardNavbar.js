@@ -7,6 +7,8 @@ import { chevronDown } from "react-icons-kit/fa/chevronDown";
 import { chevronUp } from "react-icons-kit/fa/chevronUp";
 import { arrowRight2 } from "react-icons-kit/icomoon/arrowRight2";
 
+const body = document.querySelector("body");
+
 function DashboardNavbar() {
   const assetsPath = process.env.PUBLIC_URL + "/assets/";
 
@@ -19,7 +21,17 @@ function DashboardNavbar() {
   const handleToggle = () => {
     setNavbarOpen((prev) => !prev);
 
-    navbarOpen === false ? setIcon(chevronUp) : setIcon(chevronDown);
+    if (navbarOpen === false) {
+      setIcon(chevronUp);
+      body.style.touchAction = "none";
+      body.style.overflow = "hidden";
+      body.scroll = "no";
+    } else {
+      setIcon(chevronDown);
+      body.style.touchAction = "initial";
+      body.style.overflow = "initial";
+      body.scroll = "yes";
+    }
 
     console.log(navbarOpen);
   };
@@ -46,7 +58,9 @@ function DashboardNavbar() {
             </div>
           </div>
 
-          <nav className={`${navbarOpen ? responsiveMenu : ""}`}>
+          <nav
+            className={`${navbarOpen ? responsiveMenu : ""} ${styles.mainNav}`}
+          >
             <div className={styles.teacherMode}>
               <p>CHANGE TO TEACHER MODE</p>
 
@@ -57,6 +71,8 @@ function DashboardNavbar() {
                   size={25}
                 ></Icon>
               </span>
+
+              <div className={styles.teacherModeOverlay}></div>
             </div>
 
             <ul>

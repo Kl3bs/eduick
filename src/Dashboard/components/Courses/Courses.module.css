@@ -13,8 +13,39 @@
   justify-content: space-between;
 }
 
+.infoWrapper button {
+  background: rgba(207, 201, 233, 0.4);
+  border-radius: 4px;
+  border: none;
+  color: #000;
+  padding: 5px;
+  padding-inline: 10px;
+}
+
 .courseTitle p {
   color: #200e64;
   font-size: 18px;
   font-weight: 600;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.cards {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+
+article {
+  position: relative;
+}
+
+.cardContentWrapper {
+  height: auto;
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
 }

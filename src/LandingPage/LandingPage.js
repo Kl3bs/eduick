@@ -1,12 +1,23 @@
 import styles from "./LandingPage.module.css";
+import React, { useState } from "react";
 
 const assetsPath = process.env.PUBLIC_URL + "/assets/";
 
 const LandingPage = () => {
+  const [selected, setSelected] = useState();
+
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setSelected(event.target.value);
+  };
+
   return (
     <div className="container">
+      <div className={styles.bgWrapper}>
+        <img src={`${assetsPath}images/bgShape.svg`} alt="" srcset="" />
+      </div>
+
       <div className={`row ${styles.row}`}>
-        {/*margin top de 20px */}
         <div className="col-6">
           <img
             alt="img"
@@ -35,9 +46,15 @@ const LandingPage = () => {
           <form className={styles.formCheck}>
             <div className="col-3 pi-0">
               <div className={styles.check}>
-                <input type="radio" id="2" value="2" name="fav_language" />
+                <input
+                  type="radio"
+                  id="yes"
+                  value="yes"
+                  name="fav_language"
+                  onChange={handleChange}
+                  checked={selected === "yes"}
+                />
                 <label className={styles.checkLabel} htmlFor="2">
-                  {" "}
                   I'M TEACHER
                 </label>
               </div>
@@ -45,8 +62,15 @@ const LandingPage = () => {
 
             <div className="col-3 pi-0">
               <div className={styles.check}>
-                <input type="radio" id="1" name="fav_language" />
-                <label className={styles.checkLabel} htmlFor="1">
+                <input
+                  type="radio"
+                  id="no"
+                  value="no"
+                  name="fav_language"
+                  onChange={handleChange}
+                  checked={selected === "no"}
+                />
+                <label className={styles.checkLabel} htmlFor={1}>
                   {" "}
                   I'M STUDENT
                 </label>

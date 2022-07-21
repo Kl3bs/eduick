@@ -32,7 +32,6 @@ input[type="radio"]:checked {
 }
 
 input[type="radio"]:checked::before {
-  position: absolute;
   color: #b68300;
   content: "\00A0\2713\00A0";
   border: none;
@@ -64,7 +63,13 @@ input[type="radio"]:checked + label {
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 4px;
   margin-top: 40px;
+  padding-left: 20px;
   color: #ffffff;
+}
+
+.searchInput:focus {
+  outline: none;
+  opacity: 1;
 }
 
 .title {
@@ -110,6 +115,17 @@ input[type="radio"]:checked + label {
 }
 
 @media (min-width: 992px) {
+  .bgWrapper {
+    position: absolute;
+    z-index: -1;
+
+    right: 0;
+    width: 20%;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1800px) {
   .bgWrapper {
     position: absolute;
     z-index: -1;

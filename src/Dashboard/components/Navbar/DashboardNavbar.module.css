@@ -22,15 +22,15 @@ header {
 .clear {
   clear: both;
 }
-nav ul {
+.mainNav ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
-nav ul li {
+.mainNav ul li {
   list-style: none;
 }
-nav ul li a {
+.mainNav ul li a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
@@ -92,17 +92,17 @@ nav ul li a {
     color: #069370;
   }
 
-  nav {
+  .mainNav {
     display: none;
   }
-  nav.active {
+  .mainNav.active {
     display: block;
     width: 100%;
   }
-  nav.active ul {
+  .mainNav.active ul {
     display: none;
   }
-  nav.active ul li {
+  .mainNav.active ul li {
     margin: 0;
     text-align: center;
   }
@@ -120,6 +120,16 @@ nav ul li a {
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: #7a57fd;
+  }
+
+  .teacherModeOverlay {
+    display: initial;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255 255 255 / 80%);
+    top: 165px;
+    z-index: 1;
   }
 }
 
@@ -140,6 +150,10 @@ nav ul li a {
   }
 
   .teacherMode span {
+    display: none;
+  }
+
+  .teacherModeOverlay {
     display: none;
   }
 }

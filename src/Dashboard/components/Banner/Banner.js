@@ -24,7 +24,7 @@ function Banner() {
 
             <p className={styles.bannerMessage}>
               Whether you are a student trying to find your ideal private
-              language teachers/tutors
+              language teachers/tutors.
             </p>
           </div>
           <div className={`${styles.col6} col-6`}>
