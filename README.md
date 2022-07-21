@@ -12,11 +12,11 @@ Após instalar os pacotes, execute o seguinte comando:
 
 ### (Windows)
 
-    `npx json-server --watch db.json --port 3001`
+    npx json-server --watch db.json --port 3001
 
 ### (macOS)
 
-    `json-server --watch db.json --port 3001`
+    json-server --watch db.json --port 3001
 
 Caso o receba algum erro relacionado à inicialização no macOS, usar o mesmo comando utilizado no Windows.
 
